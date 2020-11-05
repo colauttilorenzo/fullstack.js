@@ -1,0 +1,26 @@
+{
+    "id": "user-cippalippa",
+    "mail": "l.colautti@openservicevr.com",
+    "firstname": "Lorenzo",
+    "secondname": "Colautti",
+    "companies": [
+        {
+            "id": "company-cippalippa",
+            "userid": "user-cippalippa",
+            "description": "Trattoria da Lollo",
+            "address": "Via Golosine",
+            "number": "139/1",
+            "city": "Verona",
+            "zip": "37136",
+            "country": "Italy",
+            "groupid": 0,
+            "menu": {
+                "id": "menu-cippalippa",
+                "companyid": "company-cippalippa",
+                "userid": "user-cippalippa",
+                "description": "Primavera - Estate",
+                "isactive": true
+            }
+        }
+    ]
+}

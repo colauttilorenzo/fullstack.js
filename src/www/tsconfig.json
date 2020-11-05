@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "target": "es6",
+    "module": "commonjs",
+    "sourceMap": true,
+    "outDir": "../../dist/www",
+    "types": [
+      "node"
+    ],
+    "strict": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "baseUrl": "./",
+    "paths": {
+      "@models/*": [ "models/*" ],
+      "@app/*": [ "app/*" ],
+      "@guards/*": [ "app/guards/*" ],
+      "@services/*": [ "app/services/*" ],
+      "@modules/*": [ "app/modules/*" ],
+      "@shared/*": [ "../_shared/*" ]
+    }
+  },
+  "include": [
+    "./**/*"
+  ],
+  "exclude": [
+    "../../node_modules",
+    "**/*.spec.ts",
+    "**/environment.*.ts"
+  ]
+}

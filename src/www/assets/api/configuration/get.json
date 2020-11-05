@@ -1,0 +1,59 @@
+{
+  "name": "app",
+  "description": "New version of app app",
+  "version": "1.0.0",
+  "menu": {
+    "header": [
+      {
+        "text": "Logout",
+        "key": "logout",
+        "icon": "fas fa-sign-out-alt",
+        "action": "/authorization/signout"
+      },
+      {
+        "text": "Account",
+        "key": "account",
+        "icon": "fas fa-cog",
+        "action": "/user",
+        "inSlide": true
+      }
+    ],
+    "menu": {
+      "level": [
+        {
+          "key": "level-1",
+          "text": "app",
+          "items": [
+            {
+              "text": "Dashboard",
+              "action": "/home/dashboard"
+            },
+            {
+              "text": "Anagrafica prodotti",
+              "key": "product"
+            },
+            {
+              "text": "Crea codici",
+              "action": "/home/qrcode"
+            }
+          ]
+        },
+        {
+          "key": "level-2",
+          "parent": "product",
+          "text": "Anagrafica Prodotti",
+          "items": [
+            {
+              "text": "Prodotti",
+              "action": "/product/search"
+            },
+            {
+              "text": "Menu",
+              "action": "/product/group/list"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

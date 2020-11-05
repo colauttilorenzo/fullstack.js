@@ -1,0 +1,55 @@
+<div class="navigator">
+
+    <div class="navbar-menu">
+        <div class="navbar-menu-header bg-light">
+            <a class="navbar-menu-toggle" [class.open]="ismenuopen" (click)="sidebar(!ismenuopen)">
+                <div class="bar arrow-top"></div>
+                <div class="bar arrow-middle"></div>
+                <div class="bar arrow-bottom"></div>
+            </a>
+            <span class="navbar-tab-brand ml-5 font-weight-bold" *ngIf="info !== undefined">
+                {{info.name}}
+            </span>
+            <span *ngIf="info !== undefined && info.menu !== undefined">
+                <a [attr.href]="item.action" class="navbar-tab-item" [class.in-slide]="item.inSlide === true"
+                    *ngFor="let item of info.menu.header"
+                    [ngClass]="item.key">
+                    <i class="icon-left" [ngClass]="item.icon" aria-hidden="true"></i>
+                    {{item.text}}
+                </a>
+            </span>
+        </div>
+    </div>
+
+    <div *ngIf="info !== undefined && info.menu !== undefined">
+        <div class="sidebar" *ngFor="let item of info.menu.menu.level" [ngClass]="item.key" [class.sidebar-menu-open]="(ismenuopen && item.key === 'level-1') || (item.isOpen && item.key !== 'level-1')" [attr.id]="item.parent">
+            <nav class="sidebar-menu">
+                <div class="sidebar-menu-header" *ngIf="item.parent == undefined">
+                    {{item.text}}
+                    <span *ngFor="let headerItem of info.menu.header" class="navbar-slide-item">
+                        <a [attr.href]="headerItem.action" [ngClass]="headerItem.key"
+                            *ngIf="headerItem.inSlide === true">
+                            <i class="icon-left" [ngClass]="headerItem.icon" aria-hidden="true"></i>
+                        </a>
+                    </span>
+                </div>
+                <div class="sidebar-menu-header anchor" *ngIf="item.parent != undefined"
+                    (click)="closechild(item.parent)">
+                    <i class="fas fa-chevron-left" aria-hidden="true"></i>
+                    {{item.text}}
+                </div>
+                <ul class="sidebar-menu-list">
+                    <li class="sidebar-menu-list-item" (click)="do(childitem)"
+                        *ngFor="let childitem of item.items">
+                        <a class="item-link w-100" href="javascript:void(0);">
+                            {{childitem.text}}
+                            <i class="fl-right icon fa fa-chevron-right" aria-hidden="true"
+                                *ngIf="childitem.key != undefined"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+</div>

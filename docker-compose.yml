@@ -1,0 +1,41 @@
+version: '3.1'
+services:
+    db:
+        image: mariadb
+        restart: always
+        environment:
+            MYSQL_USER: ${MYSQL_USER}
+            MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+            MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+            MYSQL_ALLOW_EMPTY_PASSWORD: ${MYSQL_ALLOW_EMPTY_PASSWORD}
+            MYSQL_RANDOM_ROOT_PASSWORD: ${MYSQL_RANDOM_ROOT_PASSWORD}
+        ports:
+            - '${MYSQL_PORT}:3306'
+        volumes: 
+            - ./src/db:/docker-entrypoint-initdb.d
+    server:
+        build:
+            context: .
+            dockerfile: _docker/server.dockerfile
+            args:
+                node_env: ${SERVER_ENVIRONMENT}
+        restart: always
+        ports:
+            - '${SERVER_PUBLISH_PORT}:8080'
+        volumes: 
+            - ./dist/server:/var/www/dist
+        links:
+            - 'db:database'
+    www:
+        build:
+            context: .
+            dockerfile: _docker/www.dockerfile
+            args:
+                node_env: ${FRONTEND_ENVIRONMENT}
+        restart: always
+        ports:
+            - '${FRONTEND_PUBLISH_PORT}:4200'
+        volumes: 
+            - ./dist/www:/var/www/dist
+        links:
+            - 'server:backend'

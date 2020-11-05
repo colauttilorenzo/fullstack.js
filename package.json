@@ -1,0 +1,19 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "fullstack framework",
+  "main": "index.js",
+  "scripts": {
+    "restore": "npm install && cd src/www/ && npm install && cd ../server/ && npm install",
+    "docker": "docker-compose build --no-cache",
+    "docker-up": "docker-compose down && docker-compose up -d",
+    "serve:www": "cd src/www/ && npm run serve",
+    "build:www": "cd src/www/ && npm run build && cd ../.. && docker-compose restart www",
+    "serve:server": "cd src/server/ && npm run serve",
+    "build:server": "cd src/server/ && npm run build && cd ../.. && docker-compose restart server"
+  },
+  "author": "Colautti Lorenzo <colautti.lorenzo@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {},
+  "dependencies": {}
+}

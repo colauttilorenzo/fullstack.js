@@ -1,0 +1,12 @@
+{
+    "id": "item1-cippalippa",
+    "menu-id": "menu-cippalippa",
+    "companyid": "company-cippalippa",
+    "userid": "user-cippalippa",
+    "name": "Risotto Gorgonzola e Mela",
+    "description": "Riso carnaroli, Gorgonzola dolce DOP, Mela Golden Delicious, Menta, Lime (brodo vegetale con Cipolla Rossa, Carote e Sedano)",
+    "type": "Primo",
+    "price": "6.70",
+    "specialprice": false,
+    "active": true
+}

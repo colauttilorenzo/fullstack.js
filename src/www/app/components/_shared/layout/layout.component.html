@@ -1,0 +1,16 @@
+<sidebar></sidebar>
+<div class="overlay" [class.active]="is_overlay_active" (click)="exit();">
+	<div class="spinner-container" [class.active]="is_loader_active">
+		<div class="spinner"></div>
+		<!--div class="spinner-progress"></div>
+		<div class="spinner-text"></div-->
+	</div>
+</div>
+<div class="container-fluid contents" [class.blur]="is_overlay_active">
+	<div class="row">
+		<div class="col-12">
+			<page-header></page-header>
+			<router-outlet></router-outlet>
+		</div>
+	</div>
+</div>

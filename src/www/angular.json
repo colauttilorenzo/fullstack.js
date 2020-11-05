@@ -1,0 +1,123 @@
+{
+    "version": 1,
+    "newProjectRoot": "projects",
+    "projects": {
+        "app": {
+            "root": "",
+            "sourceRoot": "./",
+            "projectType": "application",
+            "prefix": "app",
+            "schematics": {},
+            "architect": {
+                "build": {
+                    "allowJS": true,
+                    "builder": "@angular-devkit/build-angular:browser",
+                    "options": {
+                        "outputPath": "../../dist/www",
+                        "index": "./app/index.html",
+                        "main": "./app/main.ts",
+                        "polyfills": "./app/polyfills.ts",
+                        "tsConfig": "./tsconfig.json",
+                        "assets": [
+                            "./favicon.ico",
+                            "./assets",
+                            "./manifest.webmanifest",
+                            "./pwabuilder-sw.js",
+                            "./server.js"
+                        ],
+                        "styles": [
+                            "./app/scss/style.scss"
+                        ],
+                        "scripts": []
+                    },
+                    "configurations": {
+                        "production": {
+                          "fileReplacements": [
+                            {
+                              "replace": "./environments/environment.ts",
+                              "with": "./environments/environment.prod.ts"
+                            }
+                          ],
+                          "optimization": true,
+                          "outputHashing": "all",
+                          "sourceMap": false,
+                          "extractCss": true,
+                          "namedChunks": false,
+                          "aot": true,
+                          "extractLicenses": true,
+                          "vendorChunk": false,
+                          "buildOptimizer": true,
+                          "budgets": [
+                            {
+                              "type": "initial",
+                              "maximumWarning": "5mb",
+                              "maximumError": "5mb"
+                            }
+                          ]
+                        },
+                        "uat": {
+                          "fileReplacements": [
+                            {
+                              "replace": "./environments/environment.ts",
+                              "with": "./environments/environment.uat.ts"
+                            }
+                          ],
+                          "optimization": true,
+                          "outputHashing": "all",
+                          "sourceMap": false,
+                          "extractCss": true,
+                          "namedChunks": false,
+                          "aot": true,
+                          "extractLicenses": true,
+                          "vendorChunk": false,
+                          "buildOptimizer": true,
+                          "budgets": [
+                            {
+                              "type": "initial",
+                              "maximumWarning": "5mb",
+                              "maximumError": "5mb"
+                            }
+                          ],
+                          "progress": true
+                        },
+                        "development": {
+                          "progress": true
+                        },
+                        "ci": {
+                          "progress": false
+                        }
+                    }
+                },
+                "serve": {
+                    "builder": "@angular-devkit/build-angular:dev-server",
+                    "options": {
+                        "browserTarget": "app:build"
+                    },
+                    "configurations": {
+                        "production": {
+                          "browserTarget": "app:build:production"
+                        },
+                        "uat": {
+                          "browserTarget": "app:build:uat",
+                          "progress": true
+                        },
+                        "development": {
+                          "browserTarget": "app:build:development",
+                          "progress": true
+                        },
+                        "ci": {
+                          "progress": false
+                        }
+                    }
+                },
+                "extract-i18n": {
+                    "builder": "@angular-devkit/build-angular:extract-i18n",
+                    "options": {
+                        "browserTarget": "app:build"
+                    }
+                }
+            }
+        }
+    },
+    "defaultProject": "app"
+}

@@ -1,0 +1,20 @@
+[
+    {
+        "id": "company-cippalippa",
+        "userid": "user-cippalippa",
+        "description": "Trattoria da Lollo",
+        "address": "Via Golosine",
+        "number": "139/1",
+        "city": "Verona",
+        "zip": "37136",
+        "country": "Italy",
+        "groupid": "menu-cippalippa",
+        "menu": {
+            "id": "menu-cippalippa",
+            "companyid": "company-cippalippa",
+            "userid": "user-cippalippa",
+            "description": "Primavera - Estate",
+            "isactive": true
+        }
+    }
+]

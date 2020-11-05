@@ -1,0 +1,9 @@
+node_modules
+package-lock.json
+
+.vscode
+.env
+.temp
+
+dist/www
+dist/server

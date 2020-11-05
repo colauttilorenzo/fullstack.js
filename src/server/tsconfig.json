@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "experimentalDecorators": false,
+    "target": "es6",
+    "module": "commonjs",
+    "resolveJsonModule": true,
+    "sourceMap": true,
+    "outDir": "../../dist/server",
+    "strict": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/*.spec.ts"
+  ]
+}

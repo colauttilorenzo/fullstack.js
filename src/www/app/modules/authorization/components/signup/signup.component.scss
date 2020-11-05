@@ -1,0 +1,40 @@
+@import "../../../../scss/variables.scss";
+
+form:before {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.bg-stripe-login {
+  background-color: $warning;
+  box-shadow: $box-shadow;
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.form-group .form-control {
+  background-color: theme-white(.3);
+  /*border: 0;
+  border-bottom: 1px solid;
+  border-radius: 0;/**/
+  border-color: $secondary;
+}
+
+.form-group label {
+  color: $dark;
+}
+
+.form-group.not-valid .form-control {
+  border-color: $danger;
+  background: theme-danger(.3);
+}
+
+.form-group.not-valid label {
+  color: $danger;
+}

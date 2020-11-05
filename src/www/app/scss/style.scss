@@ -1,0 +1,73 @@
+$fa-font-path: "../../../../node_modules/@fortawesome/fontawesome-free/webfonts" !default;
+
+@import "./variables.scss";
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/regular";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/solid";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/brands";
+
+.fa,
+.fas,
+.far,
+.fal,
+.fab {
+  font-family: "Font Awesome 5 Free";
+  padding-top: 0.18em;
+  padding-bottom: 0.18em;
+}
+
+@font-face {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 100;
+  src: url(/src/assets/fonts/Lato/Lato-Thin.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  src: url(/src/assets/fonts/Lato/Lato-Light.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 700;
+  src: url(/src/assets/fonts/Lato/Lato-Bold.ttf) format("truetype");
+}
+
+html,
+body {
+  background-color: $body-background;
+  width: 100%;
+  height: 100%;
+}
+
+input:focus,
+textarea:focus,
+select:focus,
+*:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+a {
+  cursor: pointer;
+}
+
+a:not(.btn),
+a:link:not(.btn),
+a:active:not(.btn) {
+  color: $primary;
+}
+
+.fl-right {
+  float: right;
+}
+
+.fl-left {
+  float: left;
+}

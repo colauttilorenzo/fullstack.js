@@ -1,0 +1,53 @@
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+
+@function theme-secondary($opacity: 1) {
+  @return rgba(255, 255, 153, $opacity);
+}
+@function theme-primary($opacity: 1) {
+  @return rgba(32, 201, 151, $opacity);
+}
+@function theme-white($opacity: 1) {
+  @return rgba(255, 255, 255, $opacity);
+}
+@function theme-black($opacity: 1) {
+  @return rgba(0, 0, 0, $opacity);
+}
+@function theme-danger($opacity: 1) {
+ @return rgba(220, 53, 69, $opacity); 
+}
+
+$primary: theme-primary(0.6);
+$primary-dark: theme-primary(1);
+
+$theme-colors: (
+  "primary": $primary,
+  "primary-dark": $primary-dark,
+  "dark": $black,
+  "light": theme-white(1),
+  "danger": theme-danger(1),
+);
+
+$body-background: rgb(249, 249, 249);
+
+$layout-contents-z-index: 10;
+$layout-sidebar-z-index: 10 * $layout-contents-z-index;
+$layout-sidebar-header-z-index: 10 * $layout-sidebar-z-index;
+$layout-sidebar-sidebar-z-index: 10 * $layout-sidebar-header-z-index;
+$layout-sidebar-toggle-z-index: 1000 * $layout-sidebar-sidebar-z-index;
+
+$sidebar-height: 70px;
+$sidebar-border-size: 1px;
+$sidebar-tab-item-border-size: 4px;
+$sidebar-tab-item-border-color: #eee;
+$sidebar-tab-item-padding: 20px;
+$sidebar-tab-item-icon-margin: 5px;
+$sidebar-menu-header-height: $sidebar-height * 2;
+$sidebar-menu-padding: 16px;
+$sidebar-width: 280px;
+
+$contents-padding-top: 25px;
+
+$box-shadow: 0 8px 6px -6px theme-black(1);
+$box-shadow-smooth: 0 8px 6px -6px theme-black(.2);
+$box-shadow-light: 0 2px 5px 0 theme-primary(.3);

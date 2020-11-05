@@ -1,0 +1,45 @@
+<section class="min-vh-100 bg-login">
+	<div class="container-fluid min-vh-100 bg-stripe-login p-4">
+		<div class="row text-primary">
+			<div class="col-xs-12 col-sm-8 col-md-6 col-lg-4 col-xl-3 mx-auto">
+				<h4 class="display-4 py-2 text-truncate">{{info.name}}</h4>
+				<form class="my-3" [formGroup]="login" (submit)="onsubmit()">
+					<div class="form-group mb-3"
+						[class.not-valid]="mail.invalid && (mail.dirty || mail.touched)">
+						<input type="text" id="mail" name="mail" formControlName="mail" class="form-control"
+							required>
+						<label class="form-control-placeholder" for="mail">Email</label>
+					</div>
+					<div class="form-group mb-3"
+						[class.not-valid]="password.invalid && (password.dirty || password.touched)">
+						<div class="input-group">
+							<input name="password" formControlName="password" class="form-control"
+							[attr.type]="isPasswordVisible ? 'text' : 'password'" required>
+						  <div class="input-group-append">
+							<button class="btn btn-secondary" style="width: 50px;" type="button" (click)="isPasswordVisible = !isPasswordVisible;">
+								<i class="fas" [class.fa-eye]="!isPasswordVisible" [class.fa-eye-slash]="isPasswordVisible"></i>
+							</button>
+						  </div>
+						</div>
+						<label class="form-control-placeholder" for="password">Password</label>
+					</div>
+					<div class="form-group mb-3 text-secondary">
+						<input type="checkbox" id="keepalive" name="keepalive" formControlName="keepalive"
+							class="form-control d-none">
+						<label class="" for="keepalive" (click)="login.value.keepalive = !login.value.keepalive;">
+							<i class="fas" [class.fa-square]="!login.value.keepalive"
+								[class.fa-check-square]="login.value.keepalive"></i>
+							Mantienimi connesso.
+						</label>
+					</div>
+					<button type="submit" class="btn btn-outline-primary w-100 mt-3">Registrati</button>
+				</form>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 col-sm-8 col-md-6 col-lg-4 col-xl-3 mx-auto">
+				Sei già iscritto? <a (click)="gosignup()" class="text-primary">Esegui l'accesso</a>.
+			</div>
+		</div>
+	</div>
+</section>

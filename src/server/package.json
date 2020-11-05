@@ -1,0 +1,37 @@
+{
+  "name": "restapi",
+  "version": "1.0.0",
+  "description": "api rest for eMenu application",
+  "main": "index.js",
+  "scripts": {
+    "serve": "export NODE_ENV=$npm_config_c && ts-node-dev --respawn --transpileOnly ./src/main.ts",
+    "build": "rm -rf ../../dist/server && tsc -p ./",
+    "docs": "typedoc --excludePrivate --out ./docs ./src"
+  },
+  "author": "Colautti Lorenzo <colautti.lorenzo@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "@types/crypto-js": "^3.1.43",
+    "@types/moment": "^2.13.0",
+    "@types/sequelize": "^4.28.8",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "crypto-js": "^3.1.9-1",
+    "express": "^4.17.1",
+    "express-ws": "^4.0.0",
+    "faker": "^4.1.0",
+    "module-alias": "^2.2.2",
+    "modulejs": "^2.9.0",
+    "moment": "^2.24.0",
+    "mysql": "^2.17.1",
+    "mysql2": "^2.1.0",
+    "sequelize": "^5.21.3",
+    "ts-node-dev": "^1.0.0-pre.44"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.6",
+    "tsconfig-paths": "^3.9.0",
+    "typedoc": "^0.17.8",
+    "typescript": "^3.8.3"
+  }
+}

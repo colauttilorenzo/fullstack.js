@@ -1,0 +1,15 @@
+@import "../../../scss/variables.scss";
+
+.text-primary {
+    color: $primary !important;
+}
+
+p.text-primary {
+    color: theme-primary(1) !important;
+}
+
+hr {
+    color: $primary !important;
+    background-color: $primary !important;
+    border-color: $primary !important;
+}

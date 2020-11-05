@@ -1,0 +1,9 @@
+@import "../../../../scss/variables.scss";
+
+.border-primary {
+    border-color: $primary !important;
+}
+
+a.list-group-item-action {
+    color: theme-black(1);
+}

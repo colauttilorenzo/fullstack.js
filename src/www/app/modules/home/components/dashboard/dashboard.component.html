@@ -1,0 +1,18 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-3" *ngFor="let company of userprofile.companies">
+			<div class="list-group">
+				<a class="list-group-item list-group-item-action flex-column align-items-start"
+					[routerLink]="['/product/group/list/', company.id]">
+					<div class="d-flex w-100 justify-content-between">
+						<h5 class="mb-1">{{company.description}}</h5>
+					</div>
+					<p class="small m-0">
+						{{company.address}}, {{company.number}}
+						<br />{{company.zip}} - {{company.city}} ({{company.country}})
+					</p>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
